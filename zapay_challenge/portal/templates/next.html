@@ -3,9 +3,40 @@
 {% block content %}
 
 <main role="main" style="font-family: 'Ubuntu', sans-serif;">
-  <p>1</p>
-  <p>{{ data.flight_number }}</p>
-  <p>2</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="card" id="last" style="width=100%;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <p>Data de lançamento : {{ data.launch_date_utc }}</p>
+              <br>
+              <p><b>Descrição:</b></p>
+              <p>{{data.details}}</p>
+            </div>
+            <div class="col-sm-6">
+              <h3>{{ data.mission_name }}</h3>
+              <h4>{{ data.launch_year }}</h4>
+              <p><b>Foguete:</b> {{ data.rocket.rocket_name }} </p>
+              <p><b>Local de lançamento:</b> {{ data.launch_site.site_name_long }} </p>
+              <p><b>Conteúdos:</b></p>
+              {% if data.links.wikipedia %}
+              <a href="{{ data.links.wikipedia }}"> Wikipédia</a>
+              {% endif %}
+              <br>
+              {% if data.links.video_link %}
+              <a href="{{ data.links.video_link }}"> Video</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
 </main>
 
 

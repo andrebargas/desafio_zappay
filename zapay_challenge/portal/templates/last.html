@@ -4,6 +4,35 @@
 
 <main role="main" style="font-family: 'Ubuntu', sans-serif;">
 
+  <div class="container">
+    <div class="row">
+      <div class="card" id="last" style="width=100%;">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="{{ data.links.mission_patch }}" alt="mission_patch" width="200px">
+            <br>
+            <p><b>Descrição:</b></p>
+            <p>{{data.details}}</p>
+          </div>
+          <div class="col-sm-6">
+            <h3>{{ data.mission_name }}</h3>
+            <h4>{{ data.launch_year }}</h4>
+            <p><b>Foguete:</b> {{ data.rocket.rocket_name }} </p>
+            <p><b>Local de lançamento:</b> {{ data.launch_site.site_name_long }} </p>
+            <p><b>Conteúdos:</b></p>
+            {% if data.links.wikipedia %}
+            <a href="{{ data.links.wikipedia }}"> Wikipédia</a>
+            {% endif %}
+            <br>
+            {% if data.links.video_link %}
+            <a href="{{ data.links.video_link }}"> Video</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 

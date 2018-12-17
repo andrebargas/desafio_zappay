@@ -4,6 +4,45 @@
 
 <main role="main" style="font-family: 'Ubuntu', sans-serif;">
 
+  <div class="container">
+    {% for element in data %}
+    <div class="row">
+      <div class="card" id="last" style="width=100%;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <p>Data de lançamento : {{ element.launch_date_utc }}</p>
+              <br>
+              <p><b>Descrição:</b></p>
+              <p>{{element.details}}</p>
+            </div>
+            <div class="col-sm-6">
+              <h3>{{ element.mission_name }}</h3>
+              <h4>{{ element.launch_year }}</h4>
+              <p><b>Foguete:</b> {{ element.rocket.rocket_name }} </p>
+              <p><b>Local de lançamento:</b> {{ element.launch_site.site_name_long }} </p>
+              <p><b>Conteúdos:</b></p>
+              {% if element.links.wikipedia %}
+              <a href="{{ element.links.wikipedia }}"> Wikipédia</a>
+              {% endif %}
+              <br>
+              {% if element.links.video_link %}
+              <a href="{{ element.links.video_link }}"> Video</a>
+              {% endif %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    {% endfor %}
+  </div>
 </main>
 
 

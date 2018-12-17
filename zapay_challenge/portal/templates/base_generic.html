@@ -3,55 +3,30 @@
 <head>
   {% load static %}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
   {% block title %}<title>Zapay</title>{% endblock %}
 
-
-<!-- <style media="screen">
-body{
-      font-family: 'Mali', cursive;
-      font-family: 'Krub', sans-serif;
-}
-
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-  max-width: 500px;
-  background-color: #aaa;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-
-/* Add rounded corners to the top left and the top right corner of the image */
-img {
-  border-radius: 5px 5px 0 0;
-}
-
-</style> -->
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container d-flex">
-        <a href="#" class="navbar-brand d-flex align-items-center" style="font-family:'Mali', cursive;">
-          <strong>Zapay Challenge</strong>
-        </a>
-
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <a class="navbar-brand" href="#">Zapay Chalange</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+       <a class="nav-link" href="/past"> Past Launches <span class="sr-only">(current)</span></a>
+       <a class="nav-link" href="/upcoming"> Future Launches <span class="sr-only">(current)</span></a>
+       <a class="nav-link" href="/next"> Next Launch <span class="sr-only">(current)</span></a>
+       <a class="nav-link" href="/last"> Last Launch <span class="sr-only">(current)</span></a>
     </div>
   </nav>
-
-  {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+  <!--coteúdo principal  -->
+  <div class="content">
+    <div class="container">
+      {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+    </div>
+  </div>
 
   <footer class="text-muted">
     <div class="container">
